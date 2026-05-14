@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="EN">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
+
+:root {
+    --background: #0d1117;
+    --terminal: #000;
+    --font: #ffffff;
+    --text-red: #ff0000;
+    --text-blue: #0000ff;
+    --text-orange: #ff8800;
+    --gray: rgba(51, 51, 51, 0.651);
+    --border: rgba(255, 255, 255, 0.15);
+    --hover: rgba(255, 255, 255, 0.08);
+    --badge-bg: rgba(255, 255, 255, 0.15);
+    --border-code: rgba(27, 27, 27, 0.15);
+    --link_color: #79c0ff;
+}
+
+.light {
+    --background: #f5f7fa;
+    --terminal: #ffffff;
+    --font: #5f5f5f;
+
+    --text-red: #cf222e;
+    --text-blue: #0969da;
+    --text-orange: #bc4c00;
+
+    --gray: rgba(0, 0, 0, 0.04);
+
+    --border: rgba(0, 0, 0, 0.12);
+    --hover: rgba(0, 0, 0, 0.06);
+    --badge-bg: rgba(0, 0, 0, 0.06);
+
+    --border-code: rgba(0, 0, 0, 0.08);
+
+    --link_color: #0969da;
+}
+
+
+.cascadia-mono {
+    font-family: "Cascadia Mono", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+.jetbrains-mono {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--font);
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-btn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 6px;
+    border-radius: 6px;
+    color: var(--font);
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: var(--hover);
+}
+
+.logo {
+    width: 28px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+
+.search input {
+    background: var(--gray);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: var(--font);
+}
+
+
+.nav {
+    display: flex;
+    gap: 25px;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 50px;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--font);
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.nav a svg {
+    width: 16px;
+    height: 16px;
+}
+
+.nav a:hover {
+
+    filter: opacity(0.5);
+    transition: 0.2s;
+}
+
+.active {
+    border-bottom: 2px solid var(--font);
+}
+
+#checkbox {
+
+    position: absolute
+}
+
+
+
+.badge {
+    background: var(--badge-bg);
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+#main {
+    margin: auto;
+    width: 95%;
+    height: 80vh;
+    border: var(--gray), solid, 1px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 70%;
+}
+
+#textcontainer {
+    padding: 60px;
+}
+
+#code {
+    width: 100%;
+    margin: auto;
+    height: 35vh;
+    padding-left: 60px;
+    background-color: var(--background);
+    border: var(--border-code), solid;
+    box-shadow: 2px 2px 2px 2px #363636;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+#infocontainer {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+}
+
+
+#typing::after {
+    content: "|";
+    animation: blink 1s infinite;
+    color: #58a6ff;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.linha {
+    white-space: pre;
+}
+
+#legenda {
+    width: 50%;
+    height: 30vh;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+#worklink {
+    text-decoration: none;
+    color: var(--link_color);
+}
+
+#gif {
+    display: flex;
+    height: 5vh;
+
+    >img {
+        height: 5vh;
+        width: 5%;
+    }
+}
+
+#internship {
+    display: flex;
+    gap: 5px;
+
+    >div {
+        width: 60px;
+        height: 18px;
+        background-color: var(--font);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+
+        >img {
+            height: 2vh;
+            width: 15px;
+        }
+    }
+}
+
+#internshipbtn {
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+
+}
+
+#social {
+    display: flex;
+    width: 100px;
+    height: 18px;
+    background-color: var(--font);
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 2px;
+
+
+    >a {
+        text-decoration: none;
+        color: #000;
+        border-radius: 1px;
+        font-size: 13px;
+
+    }
+
+    >img {
+        height: 2vh;
+        width: 15px;
+    }
+}
+
+#profile {
+    width: 50%;
+    height: 30vh;
+    background-repeat: no-repeat;
+    border-radius: 70vh;
+    display: flex;
+    align-items: last baseline;
+    justify-content: start;
+    margin: auto;
+    position: relative;
+    background-size: cover;
+
+}
+
+#iconcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    justify-items: center;
+}
+
+#btncontainer {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+
+/* ===================== */
+/*  MOBILE (até 768px) */
+/* ===================== */
+@media (max-width: 768px) {
+
+    /* layout geral */
+    #main {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .left {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .menu-btn {
+        padding: 5px;
+    }
+
+    /* NAV */
+    .nav {
+        overflow-x: auto;
+        gap: 15px;
+        padding: 10px;
+        font-size: 10px
+    }
+
+    /* TEXTO */
+    #textcontainer {
+        padding: 20px;
+    }
+
+    #legenda {
+        width: 50%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    #legenda h1 {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+
+    #legenda p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    /* SKILLS */
+    #internship {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    #internship div {
+        width: auto;
+        padding: 2px 6px;
+    }
+
+    #internshipbtn {
+        font-size: 12px;
+    }
+
+    #btncontainer {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .social {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #code {
+        font-size: 13px;
+        padding: 15px;
+        height: auto;
+        overflow-x: auto;
+    }
+
+    .linha {
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+
+    #iconcontainer {
+        margin-top: 20px;
+
+    }
+
+
+    #profile {
+        width: 150px;
+        height: 150px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+
+    #terminal {
+        width: 100%;
+        height: 250px;
+        font-size: 13px;
+    }
+
+    #terminalHead {
+        width: 100%;
+    }
+}
+
+
+
+/*  TABLET (769px - 1024px) */
+
+@media (max-width: 1024px) {
+
+    #main {
+        grid-template-columns: 60% 40%;
+    }
+
+    #textcontainer {
+        padding: 30px;
+    }
+
+    #legenda h1 {
+        font-size: 26px;
+    }
+
+    #legenda p {
+        font-size: 15px;
+    }
+
+    #code {
+        font-size: 16px;
+    }
+
+    #profile {
+        width: 180px;
+        height: 180px;
+    }
+
+    #terminal {
+        height: 300px;
+    }
+}
+
+
+/* ===================== */
+/* NOTEBOOK (1025px - 1440px) */
+/* ===================== */
+@media (max-width: 1440px) {
+
+    #main {
+        grid-template-columns: 65% 35%;
+    }
+
+    #code {
+        font-size: 18px;
+    }
+
+    #profile {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+.keyword {
+    color: #ff7b72;
+}
+
+/* class, def */
+.string {
+    color: #a5d6ff;
+}
+
+/* strings */
+.variable {
+    color: #79c0ff;
+}
+
+/* variáveis */
+.function {
+    color: #d2a8ff;
+}
+
+/* função */
+.comment {
+    color: #8b949e;
+}
+
+/* comentário */
+    </style>
+    <header class="header">
+
+        <div class="left">
+
+            <button class="menu-btn">
+
+                <svg viewBox="0 0 16 16" width="18">
+                    <path fill="currentColor" d="M1 3h14v2H1V3zm0 4h14v2H1V7zm0 4h14v2H1v-2z" />
+                </svg>
+            </button>
+
+
+            <svg class="logo" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
+                    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94
+                    -.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                    1.08.58 1.23.82.72 1.21 1.87.87
+                    2.33.66.07-.52.28-.87.51-1.07
+                    -1.78-.2-3.64-.89-3.64-3.95
+                    0-.87.31-1.59.82-2.15-.08-.2
+                    -.36-1.02.08-2.12 0 0 .67-.21
+                    2.2.82a7.65 7.65 0 012.01-.27
+                    c.68 0 1.36.09 2.01.27
+                    1.53-1.04 2.2-.82 2.2-.82
+                    .44 1.1.16 1.92.08 2.12
+                    .51.56.82 1.27.82 2.15
+                    0 3.07-1.87 3.75-3.65 3.95
+                    .29.25.54.73.54 1.48
+                    0 1.07-.01 1.93-.01 2.2
+                    0 .21.15.46.55.38A8.01 8.01
+                    0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+
+            <span class="username">JorgeLmlp</span>
+
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Type / to search">
+        </div>
+        
+    </header>
+
+    <nav class="nav">
+
+        <a class="active">
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M2 2h5v5H2V2zm7 0h5v5H9V2zM2 9h5v5H2V9zm7
+                0h5v5H9V9z" />
+            </svg>
+
+            Overview
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114
+                    2.5v11A2.5 2.5 0 0111.5 16h-7A2.5
+                    2.5 0 012 13.5v-11z" />
+            </svg>
+
+            Repositories <span class="badge">9</span>
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M1 1h6v6H1V1zm8 0h6v6H9V1zM1
+                9h6v6H1V9zm8 3h6v3H9v-3z" />
+            </svg>
+
+            Projects
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 0l8 4-8 4-8-4 8-4zm-8
+                6l8 4 8-4v6l-8 4-8-4V6z" />
+            </svg>
+
+            Packages
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 .25l2.47 5.01 5.53.8-4
+                    3.9.94 5.49L8 12.77 3.06
+                    15.45 4 9.96 0 6.06l5.53-.8L8 .25z" />
+            </svg>
+
+            Stars <span class="badge">9</span>
+        </a>
+
+    </nav>
+    <div id="main">
+        <div id="textcontainer">
+            <div id="infocontainer">
+
+                <div id="legenda">
+                    <div id="gif">
+                        
+                        <h1>Hi im Jorge! </h1>
+                    </div>
+                    
+                    <p style="margin-bottom: 15px;">Technical teacher assistant at <a id="worklink"
+                        href="https://www.cotemig.com.br/">Cotemig</a></p>
+                        <div id="internship">
+                            <div>
+                        <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        
+                        <a href="" id="internshipbtn">Python</a>
+                    </div>
+                    <div>
+                        <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+                        
+                        <a href="" id="internshipbtn">C#</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        
+                        <a href="" id="internshipbtn">HTML</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        
+                        <a href="" id="internshipbtn">CSS</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+                        
+                        <a href="" id="internshipbtn">Linux</a>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; margin-bottom: 15px;">Actually on 3rd grade on technical IT highscool on <a id="worklink"
+                    href="https://www.cotemig.com.br/">cotemig</a></p>
+                    <div id="btncontainer">
+                        
+                        <div id="social">
+                            
+                            <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
+                            
+                            <a href="">Linkedin</a>
+                        </div>
+                        <div id="social">
+                            
+                            <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                            
+                            <a href="">Github</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="iconcontainer">
+                    <div id="profile" style="background-image: url(img/profile.png);">
+                        <div id="checkbox"><input id="light"  type="checkbox"></div>
+                    </div>
+                
+                    
+                </div>
+
+            </div>
+            <div id="code">
+                
+                <p id="typing">
+                </p>
+                
+            </div>
+            
+        </div>
+    <script>
+        const elemento = document.getElementById("typing");
+const body = document.body
+let codigo
+if (body.classList.contains("EN")) {
+    codigo = [
+        { texto: "class Profile:", html: `<span class="keyword">class</span> Profile:` },
+        { texto: '    user = "JorgeLmlp"', html: `    <span class="variable">user</span> = <span class="string">"JorgeLmlp"</span>` },
+        
+        { texto: '    desc = "creating new and affordable solutions for web, mobile development and data science"]', html: `    <span class="variable">desc</span> = <span class="string">"creating new and affordable solutions for web, mobile development and data science"</span>` },
+
+        { texto: '    Programming_languages = ["Python", "javascript", "HTML", "CSS", "Swift", "Kotlin", "Flutter"]', html: `    <span class="variable">Programming languages</span> = <span class = "colchetes">[</span> <span class="string">"Python","javascript", "HTML, CSS, "Swift", "Kotlin", "Flutter" </span> <span class = "colchetes">]</span>` },
+        { texto: '    tools = ["Flask", "React", "vite", "Tailwindcss", "Pandas"]', html: `    <span class="variable">tools</span> = <span class="string">"Flask", "React","Vite","Pandas","Tailwindcss"</span> <span class = "colchetes">]</span> ` },
+
+
+        { texto: "def hello_world():", html: `<span class="keyword">def</span> <span class="function">Hello_world</span>():` },
+
+        { texto: '   print("Hello world")', html: `    print(<span class="string">"Hello world"</span>)` },
+
+        { texto: "hello_world()", html: `<span class="function">Hello_world</span>()` }
+    ];
+}
+else {
+    codigo = [
+        { texto: "class Nome:", html: `<span class="keyword">class</span> Nome:` },
+
+        { texto: '    usuario = "JorgeLmlp"', html: `    <span class="variable">usuario</span> = <span class="string">"JorgeLmlp"</span>` },
+
+        { texto: '    descricao = "criando soluções novas e acessíveis para desenvolvimento web, mobile e ciência de dados"', html: `    <span class="variable">descricao</span> = <span class="string">"criando soluções novas e acessíveis para desenvolvimento web, mobile e ciência de dados"</span>` },
+
+        { texto: '    linguagens_de_programacao = ["Python", "JavaScript", "HTML", "CSS", "Swift", "Kotlin", "Flutter"]', html: `    <span class="variable">linguagens_de_programacao</span> = [<span class="string">"Python"</span>, <span class="string">"JavaScript"</span>, <span class="string">"HTML"</span>, <span class="string">"CSS"</span>, <span class="string">"Swift"</span>, <span class="string">"Kotlin"</span>, <span class="string">"Flutter"</span>]` },
+
+        { texto: '    ferramentas = ["Flask", "React", "Vite", "TailwindCSS", "Pandas"]', html: `    <span class="variable">ferramentas</span> = [<span class="string">"Flask"</span>, <span class="string">"React"</span>, <span class="string">"Vite"</span>, <span class="string">"TailwindCSS"</span>, <span class="string">"Pandas"</span>]` },
+
+        { texto: "def ola_mundo():", html: `<span class="keyword">def</span> <span class="function">ola_mundo</span>():` },
+
+        { texto: '   print("Olá mundo")', html: `    print(<span class="string">"Olá mundo"</span>)` },
+
+        { texto: "hello world()", html: `<span class="function">hello world</span>()` }
+    ]
+}
+let linha = 0;
+let char = 0;
+
+function digitar() {
+    if (linha < codigo.length) {
+
+
+        let linhas = elemento.querySelectorAll(".linha");
+
+        if (!linhas[linha]) {
+            const novaLinha = document.createElement("div");
+            novaLinha.classList.add("linha");
+            elemento.appendChild(novaLinha);
+        }
+
+        const linhaAtual = elemento.querySelectorAll(".linha")[linha];
+
+        if (char < codigo[linha].texto.length) {
+            linhaAtual.textContent += codigo[linha].texto.charAt(char);
+            char++;
+            setTimeout(digitar, 20);
+        } else {
+            linhaAtual.innerHTML = codigo[linha].html;
+
+            linha++;
+            char = 0;
+            setTimeout(digitar, 200);
+        }
+    }
+}
+
+digitar();
+
+const temaSalvo = localStorage.getItem("tema")
+const light = document.getElementById("light")
+
+body.classList.toggle("light", localStorage.getItem("tema") === "light");
+
+light.addEventListener("click", () => {
+    const isLight = body.classList.toggle("light");
+    localStorage.setItem("tema", isLight ? "light" : "dark");
+});
+    </script>
+</body>
+
+</html>

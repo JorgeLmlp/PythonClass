@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="EN">
+
+    <header class="header">
+
+        <div class="left">
+
+            <button class="menu-btn">
+
+                <svg viewBox="0 0 16 16" width="18">
+                    <path fill="currentColor" d="M1 3h14v2H1V3zm0 4h14v2H1V7zm0 4h14v2H1v-2z" />
+                </svg>
+            </button>
+
+
+            <svg class="logo" viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
+                    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94
+                    -.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                    1.08.58 1.23.82.72 1.21 1.87.87
+                    2.33.66.07-.52.28-.87.51-1.07
+                    -1.78-.2-3.64-.89-3.64-3.95
+                    0-.87.31-1.59.82-2.15-.08-.2
+                    -.36-1.02.08-2.12 0 0 .67-.21
+                    2.2.82a7.65 7.65 0 012.01-.27
+                    c.68 0 1.36.09 2.01.27
+                    1.53-1.04 2.2-.82 2.2-.82
+                    .44 1.1.16 1.92.08 2.12
+                    .51.56.82 1.27.82 2.15
+                    0 3.07-1.87 3.75-3.65 3.95
+                    .29.25.54.73.54 1.48
+                    0 1.07-.01 1.93-.01 2.2
+                    0 .21.15.46.55.38A8.01 8.01
+                    0 0016 8c0-4.42-3.58-8-8-8z" />
+            </svg>
+
+            <span class="username">JorgeLmlp</span>
+
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="Type / to search">
+        </div>
+        
+    </header>
+
+    <nav class="nav">
+
+        <a class="active">
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M2 2h5v5H2V2zm7 0h5v5H9V2zM2 9h5v5H2V9zm7
+                0h5v5H9V9z" />
+            </svg>
+
+            Overview
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114
+                    2.5v11A2.5 2.5 0 0111.5 16h-7A2.5
+                    2.5 0 012 13.5v-11z" />
+            </svg>
+
+            Repositories <span class="badge">9</span>
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M1 1h6v6H1V1zm8 0h6v6H9V1zM1
+                9h6v6H1V9zm8 3h6v3H9v-3z" />
+            </svg>
+
+            Projects
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 0l8 4-8 4-8-4 8-4zm-8
+                6l8 4 8-4v6l-8 4-8-4V6z" />
+            </svg>
+
+            Packages
+        </a>
+
+        <a>
+
+
+            <svg viewBox="0 0 16 16">
+                <path fill="currentColor" d="M8 .25l2.47 5.01 5.53.8-4
+                    3.9.94 5.49L8 12.77 3.06
+                    15.45 4 9.96 0 6.06l5.53-.8L8 .25z" />
+            </svg>
+
+            Stars <span class="badge">9</span>
+        </a>
+
+    </nav>
+    <div id="main">
+        <div id="textcontainer">
+            <div id="infocontainer">
+
+                <div id="legenda">
+                    <div id="gif">
+                        
+                        <h1>Hi im Jorge! </h1>
+                    </div>
+                    
+                    <p style="margin-bottom: 15px;">Technical teacher assistant at <a id="worklink"
+                        href="https://www.cotemig.com.br/">Cotemig</a></p>
+                        <div id="internship">
+                            <div>
+                        <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        
+                        <a href="" id="internshipbtn">Python</a>
+                    </div>
+                    <div>
+                        <img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+                        
+                        <a href="" id="internshipbtn">C#</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        
+                        <a href="" id="internshipbtn">HTML</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        
+                        <a href="" id="internshipbtn">CSS</a>
+                    </div>
+                    <div>
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" />
+                        
+                        <a href="" id="internshipbtn">Linux</a>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; margin-bottom: 15px;">Actually on 3rd grade on technical IT highscool on <a id="worklink"
+                    href="https://www.cotemig.com.br/">cotemig</a></p>
+                    <div id="btncontainer">
+                        
+                        <div id="social">
+                            
+                            <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
+                            
+                            <a href="">Linkedin</a>
+                        </div>
+                        <div id="social">
+                            
+                            <img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" />
+                            
+                            <a href="">Github</a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="iconcontainer">
+                    <div id="profile" style="background-image: url('{{ url_for ('static', filename='img/profile.png') }}')">
+                        <div id="checkbox"><input id="light" type="checkbox"></div>
+                    </div>
+                
+                    
+                </div>
+
+            </div>
+            <div id="code">
+                
+                <p id="typing">
+                </p>
+                
+            </div>
+            
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
