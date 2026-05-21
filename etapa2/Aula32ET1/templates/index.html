@@ -1,0 +1,25 @@
+
+{% extends 'base.html'%}
+{% block title %}
+home
+{%endblock title %}
+
+{% block content%}
+<ul>
+    {% for i in  dados%}
+    <li>
+        nome: {{i.nome}}
+        {% if i.nota >= 7 %}
+        status : aprovado
+        {% else %}
+        status : reprovado
+        {% endif %}
+        
+    </li>
+    {% endfor %}
+    
+    
+</ul>
+    {% endblock content%}
+
+
