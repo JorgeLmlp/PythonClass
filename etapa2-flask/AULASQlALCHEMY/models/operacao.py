@@ -10,6 +10,7 @@ class Operacao(db.Model):
     num1 = db.Column(db.Integer, nullable = False)
     num2 = db.Column(db.Integer, nullable = False)
     resultado = db.Column(db.String(255), nullable=False)
+    operacao = db.Column(db.String(15), nullable = False)
     etapas = db.Column(db.String, nullable=False)
     criado_em = db.Column(db.DateTime, default = datetime.now, nullable = False)
     
@@ -23,7 +24,7 @@ class Operacao(db.Model):
             resultado=str(resultado),
         )
         db.session.add(registro)
-        db.commit()
+        db.session.commit()
         
         return registro
 
