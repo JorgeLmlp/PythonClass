@@ -8,10 +8,10 @@ class Operacao(db.Model):
 
     id = db.Column(db.Integer, primary_key = True, nullable = False)
     num1 = db.Column(db.Integer, nullable = False)
-    num2 = db.Column(db.Integer, nullable = False)
-    resultado = db.Column(db.String(255), nullable=False)
+    num2 = db.Column(db.Integer, nullable = True)
     operacao = db.Column(db.String(15), nullable = False)
     etapas = db.Column(db.String, nullable=False)
+    resultado = db.Column(db.String(255), nullable=False)
     criado_em = db.Column(db.DateTime, default = datetime.now, nullable = False)
     
     @classmethod
