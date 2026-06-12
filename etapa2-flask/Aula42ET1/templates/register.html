@@ -2,43 +2,10 @@
 {% block title %}
 Register
 {% endblock title %}
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
-<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
-{% endblock head %}
-{% block content %}
-<div id="container">
-    <form action="" method="POST">
-        <input
-            type="text"
-            name="user"
-            id="user"
-            placeholder="Usuário"
-        >
-        <input
-            type="password"
-            name="password"
-            id="pwd"
-            placeholder="Senha"
-        >
-        <input type="submit" id="submit" value="Registrar">
-        <label for="imgInput" style="background-color: #8c8c8c; color: white; padding: 10px 20px; border-radius: 5px; cursor: pointer; display: inline-block;">
-            Enviar Imagem
-        </label>
-        <input
-            type="file"
-            id="imgInput"
-            accept="image/*"
-            style="display: none;"
-        >
-
-        <img id="preview" style="max-width: 300px; margin-top: 10px; display: none;">
-    </form>
-    <dialog id="modal">
-        {% if mensagem %}
-        <p>{{ mensagem }}</p>
-        {% endif %}
-        <button type="button" id="close">Fechar</button>
-    </dialog>
-</div>
+{%block content%}
+<form action="" method="POST">
+    <input type="text" name = 'user'>
+    <input type="text" name = 'password'>
+    <input type="submit">
+</form>
 {%endblock content%}
