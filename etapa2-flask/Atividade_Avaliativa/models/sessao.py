@@ -1,6 +1,5 @@
-from . import db
-from . import ModeloBase
-
+from ..database import db
+from .base import ModeloBase
 
 class Sessao(ModeloBase):
     __tablename__ = "sessoes"

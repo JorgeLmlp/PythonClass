@@ -1,7 +1,5 @@
-from . import db
-from . import ModeloBase
-
-
+from ..database import db
+from .base import ModeloBase
 class Filme(ModeloBase):
     __tablename__ = "filmes"
 

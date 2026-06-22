@@ -1,10 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
-
-from .base import ModeloBase
-from .filme import Filme
-from .sala import Sala
-from .sessao import Sessao
-from .ingresso import Ingresso
+from models.base import ModeloBase
+from models.filme import Filme
+from models.sala import Sala
+from models.sessao import Sessao
+from models.ingresso import Ingresso
+from database import db
 
 __all__ = ["db", "ModeloBase", "Filme", "Sala", "Sessao", "Ingresso"]
