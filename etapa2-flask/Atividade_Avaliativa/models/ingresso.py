@@ -1,4 +1,5 @@
-from ..database import db
+from database import db
+
 from .base import ModeloBase
 
 class Ingresso(ModeloBase):

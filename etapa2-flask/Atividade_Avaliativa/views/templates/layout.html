@@ -8,7 +8,8 @@
 <body>
     <nav class="nav">
         <a href="{{ url_for('dashboard.index') }}">Início</a>
-        <a href="{{ url_for('cinema.index') }}">Cinema</a>
+        <a href="{{ url_for('cinema.lista_sessoes') }}">Cinema</a>
+        
     </nav>
     <main class="container">
         {% block content %}{% endblock %}

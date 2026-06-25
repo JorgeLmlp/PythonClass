@@ -11,6 +11,7 @@ def popular_dados():
     salas = [
         Sala(numero=1, capacidade=120),
         Sala(numero=2, capacidade=80),
+        Sala(numero=3, capacidade=100),
     ]
     db.session.add_all(filmes + salas)
     db.session.commit()

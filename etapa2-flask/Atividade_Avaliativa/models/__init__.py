@@ -5,4 +5,5 @@ from models.sessao import Sessao
 from models.ingresso import Ingresso
 from database import db
 
+
 __all__ = ["db", "ModeloBase", "Filme", "Sala", "Sessao", "Ingresso"]
