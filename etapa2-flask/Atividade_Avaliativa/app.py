@@ -12,7 +12,7 @@ def criar_app():
         static_folder="views/static",
     )
 
-    pasta = os.path.abspath(os.path.dirname(__file__))
+    pasta = os.path.abspath(os.path.dirname(__file__), "database")
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join(pasta, "cinema.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
