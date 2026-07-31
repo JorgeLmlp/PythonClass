@@ -69,10 +69,10 @@ USER_AGENT: str = "Mozilla/5.0 (compatible; TecTI-Aula16/1.0; +aula-educacional)
 
 # Expressões regulares para achar "seleção" OU "selecao" (ç/c e ã/a).
 # re.compile → re.Pattern[str]  (objeto regex, não string).
-REGEX_SUBSTRING: re.Pattern[str] = re.compile(r"derrota", re.IGNORECASE)
+REGEX_SUBSTRING: re.Pattern[str] = re.compile(r"vasco", re.IGNORECASE)
 
 # \b = limite de palavra — evita casar pedaços estranhos em palavras longas.
-REGEX_PALAVRA: re.Pattern[str] = re.compile(r"derrota", re.IGNORECASE)
+REGEX_PALAVRA: re.Pattern[str] = re.compile(r"vasco", re.IGNORECASE)
 
 
 class Mencao(TypedDict):
@@ -180,7 +180,7 @@ def buscar_mencoes_selecao(modo: str = "substring") -> ResultadoBusca:
 
     return ResultadoBusca(
         fonte=URL_GE,
-        termo_busca="seleção",
+        termo_busca="vasco",
         modo_busca=modo,
         total=len(mencoes),
         mencoes=mencoes,

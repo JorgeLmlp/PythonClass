@@ -24,7 +24,7 @@ from services import buscar_mencoes_selecao
 selecao_api_bp = Blueprint("selecao_api", __name__, url_prefix="/api")
 
 
-@selecao_api_bp.route("/derrota", methods=["GET"])
+@selecao_api_bp.route("/vasco", methods=["GET"])
 def listar_mencoes_selecao() -> Any:
     # Any = "pode ser Response do Flask ou tupla (response, status)".
     # Usamos Any aqui só para documentar que o retorno é flexível por causa do HTTP.
