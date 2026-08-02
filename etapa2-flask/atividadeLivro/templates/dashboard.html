@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <div class="header-dashboard">
+
+        <h1>
+            Minhas Tarefas
+        </h1>
+
+        <a href="{{ url_for('tarefas_bp.criarTarefa') }}" class="btn-nova">
+            Nova tarefa
+        </a>
+
+    </div>
+
+
+    {% if tarefas %}
+
+        <div class="lista-tarefas">
+
+            {% for tarefa in tarefas %}
+
+            <div class="tarefa-card">
+
+                <h2>
+                    {{ tarefa.titulo }}
+                </h2>
+
+
+                <p>
+                    {{ tarefa.descricao }}
+                </p>
+
+
+                {% if tarefa.status %}
+
+                    <span class="concluida">
+                        Concluída
+                    </span>
+
+                {% else %}
+
+                    <span class="pendente">
+                        Pendente
+                    </span>
+
+                {% endif %}
+
+
+
+                <div class="acoes">
+
+                    <form method="POST" action="{{ url_for('tarefas_bp.concluirTarefa', id=tarefa.id) }}">
+                
+                        <label class="check">
+                
+                            <input 
+                                type="checkbox"
+                                onchange="this.form.submit()"
+                            >
+                
+                            Concluir
+                
+                        </label>
+                
+                    </form>
+                
+                
+                    <a href="{{ url_for('tarefas_bp.editarTarefa', id=tarefa.id) }}">
+                        Editar
+                    </a>
+                
+                
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+    {% else %}
+
+        <p class="vazio">
+            Você ainda não possui tarefas.
+        </p>
+
+    {% endif %}
+
+
+</div>
+
+{% endblock %}
