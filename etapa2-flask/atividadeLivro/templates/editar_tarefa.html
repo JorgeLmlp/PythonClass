@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+Editar Tarefa
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+<h1>Editar tarefa</h1>
+
+<form method="POST" action="{{ url_for('tarefas_bp.editarTarefa', id=tarefa.id) }}">
+
+    <label>
+        Título:
+    </label>
+
+    <input 
+        type="text"
+        name="titulo"
+        value="{{ tarefa.titulo }}"
+        required
+    >
+
+    <label>
+        Descrição:
+    </label>
+
+    <textarea 
+        name="descricao"
+        required
+    >{{ tarefa.descricao }}</textarea>
+
+    <label class="check">
+        <input
+            type="checkbox"
+            name="status"
+            {% if tarefa.status %}checked{% endif %}
+        >
+        Concluída
+    </label>
+
+    <button type="submit">
+        Salvar alterações
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}
