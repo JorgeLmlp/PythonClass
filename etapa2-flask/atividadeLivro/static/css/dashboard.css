@@ -1,0 +1,169 @@
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #f4f4f4;
+
+}
+
+
+.dashboard-container {
+
+    width: 900px;
+
+    margin: 40px auto;
+
+}
+
+
+.header-dashboard {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.btn-nova {
+
+    background: #007bff;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+}
+
+
+.btn-nova:hover {
+
+    background: #0056b3;
+
+}
+
+
+
+.lista-tarefas {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.tarefa-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+
+}
+
+
+
+.tarefa-card h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.tarefa-card p {
+
+    color: #555;
+
+    min-height: 50px;
+
+}
+
+
+
+.concluida {
+
+    color: green;
+
+    font-weight: bold;
+
+}
+
+
+
+.pendente {
+
+    color: orange;
+
+    font-weight: bold;
+
+}
+
+
+
+.acoes {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+
+.acoes a {
+
+    text-decoration: none;
+
+    color: #007bff;
+
+}
+
+
+
+.acoes .excluir {
+
+    color: red;
+
+}
+
+
+
+.vazio {
+
+    text-align: center;
+
+    color: #777;
+
+}
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: green;
+    cursor: pointer;
+}
+
+
+.check input {
+    width: 18px;
+    height: 18px;
+}
