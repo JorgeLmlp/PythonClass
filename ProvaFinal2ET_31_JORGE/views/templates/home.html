@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+
+
+{% block title %}Histórico — RaspaGE{%endblock title%}
+
+{% block content %}
+<section class="hero">
+    <p class="selo">PROVA B · turma 3A2 · modelo Aula 19</p>
+    <h1 class="hero-brand">Raspa<em>GE</em></h1>
+    <p class="lead">
+        Webscraping em <strong>ge.globo.com</strong>: captura links sobre
+        <strong>futebol</strong> (futebol, gol, seleção…), mostra no site e grava no SQLite se você quiser.
+    </p>
+</section>
+
+<section class="painel">
+    <h2 class="secao-titulo">Raspar a página fonte</h2>
+    <form method="post" action="{{ url_for('site.buscar') }}" class="form-busca">
+        <div class="campo-form">
+            <label for="modo">Modo</label>
+            <select id="modo" name="modo">
+                <option value="palavra" selected>Só com palavras-chave (futebol)</option>
+                <option value="todos">Todos os links candidatos</option>
+            </select>
+        </div>
+        <div class="campo-check">
+            <label>
+                <input type="checkbox" name="salvar" value="1" checked>
+                Gravar no histórico SQLite
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primario">Raspar notícias</button>
+    </form>
+</section>
+
+<section class="painel" style="margin-top: 1.2rem;">
+    <h2 class="secao-titulo">Últimas coletas</h2>
+    {% if coletas %}
+    <ul class="lista">
+        {% for c in coletas %}
+        <li>
+            <a href="{{ url_for('site.detalhe_coleta', coleta_id=c.id) }}">
+                #{{ c.id }} · {{ c.modo_busca }} · {{ c.total }} notícia(s)
+            </a>
+            <span class="meta">{{ c.data_criacao }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <p class="mais"><a href="{{ url_for('site.historico') }}">Ver histórico →</a></p>
+    {% else %}
+    <p class="vazio">Nenhuma coleta ainda. Raspe a página e marque “Gravar”.</p>
+    {% endif %}
+</section>
+{% endblock %}
